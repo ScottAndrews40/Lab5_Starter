@@ -6,9 +6,9 @@ let hornSound = document.getElementsByClassName('hidden')[0];
 let sound = document.getElementsByTagName('button')[0];
 let slider = document.getElementById('volume-controls');
 let volImg = slider.querySelector('img');
-console.log(volImg);
+//console.log(volImg);
 let slideControls = slider.getElementsByTagName('input');
-console.log(slider);
+//console.log(slider);
 const confetti = new JSConfetti();
 
 
@@ -22,7 +22,7 @@ function updateHorn() {
   {
     confetti.addConfetti();
   }
-};
+}
 
 function honkSound() {
   
@@ -36,7 +36,7 @@ function honkSound() {
     hornSound.play();
   }
   
-};
+}
 
 
 // At zero volume, the mute icon (level 0) should be displayed
@@ -47,6 +47,8 @@ function honkSound() {
 // The correct volume icon should be set
 function volumeSlide() {
   
+  hornSound.volume = slideControls[0].value/100;
+
   console.log(slideControls[0].value);
   if(slideControls[0].value == 0)
   {
@@ -65,7 +67,7 @@ function volumeSlide() {
   }
 
   
-};
+}
 
 function init() {
   // TODO
